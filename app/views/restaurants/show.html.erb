@@ -4,6 +4,16 @@
 
 <h3>Address :</h3><%= @restaurant.address %>
 <h3>Phone Number :</h3><%= @restaurant.phone_number %>
+
+<h3>Reviews</h3>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
 <br>
 <%= link_to "Edit the restaurant", edit_restaurant_path(@restaurant) %>
 <br>
