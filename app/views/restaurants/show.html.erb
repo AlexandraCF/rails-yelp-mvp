@@ -8,7 +8,11 @@
 <h3>Reviews</h3>
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
+    <li><%= review.content %></li>
+    <li><% (7 - review.rating).times do %>
+    <i class="fas fa-star"></i>
+    <% end %></li>
+  
   <% end %>
 </ul>
 
